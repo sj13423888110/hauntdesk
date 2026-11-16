@@ -77,8 +77,11 @@ Stats = { completed: number, candy: 0..100 }
   drawn from the agent's result pool; agent shows `done`, then returns to
   `idle` after ~2.5 s and pulls the next queued task; stats and candy
   meter update; house windows light proportionally.
-- Concurrency: each agent runs at most one task; up to six agents can work
+- Concurrency: each agent runs at most one task; up to seven agents can work
   simultaneously.
+- Mummy Moderator follows the same data-driven agent model as the rest of
+  the roster. Documentation and summary keywords route matching work to
+  the moderator, whose log steps and result summaries stay role-specific.
 
 ## Error handling
 

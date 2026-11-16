@@ -13,10 +13,10 @@ and collect the candy when the job is done.
 HauntDesk is a single-page, zero-dependency web app that simulates an AI
 agent operations desk:
 
-- **Agent roster** — six themed agents (Ghost Coder, Pumpkin Planner,
-  Vampire Reviewer, Witch Researcher, Skeleton QA, Zombie DevOps), each with
-  a specialty skill, an animated avatar, and a live status (idle / working /
-  done).
+- **Agent roster** — seven themed agents (Ghost Coder, Pumpkin Planner,
+  Vampire Reviewer, Witch Researcher, Skeleton QA, Zombie DevOps, and Mummy
+  Moderator), each with a specialty skill, an animated avatar, and a live
+  status (idle / working / done).
 - **Task dispatch** — create a task, assign it to a specific agent or let the
   desk auto-assign by matching the task title to an agent's specialty.
 - **Live work simulation** — a working agent streams a step-by-step log

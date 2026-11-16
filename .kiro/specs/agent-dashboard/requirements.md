@@ -27,8 +27,9 @@ glance, so that I know who is available and what each agent is good at.
 
 #### Acceptance Criteria
 
-1. THE System SHALL display six agents, each with a name, an avatar, a
-   role, a specialty skill, and a status indicator.
+1. THE System SHALL display seven agents, including Mummy Moderator as a
+   documentation and summaries specialist; each agent SHALL have a name,
+   an avatar, a role, a specialty skill, and a status indicator.
 2. THE System SHALL visually distinguish the statuses `idle`, `working`,
    and `done` on each agent card.
 3. WHEN an agent starts a task, THE System SHALL set that agent's status

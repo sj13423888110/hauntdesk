@@ -145,7 +145,7 @@ main { position: relative; z-index: 1; max-width: 1280px; margin: 0 auto; paddin
 
 /* ---------- roster ---------- */
 
-.roster { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; }
+.roster { display: grid; grid-template-columns: repeat(auto-fill, minmax(155px, 1fr)); gap: 14px; }
 
 .agent-card {
   background: #170e30; border: 1px solid var(--line); border-radius: 12px;
@@ -278,7 +278,7 @@ footer code { background: #0e0820; padding: 1px 6px; border-radius: 5px; color: 
   .topbar, main, footer { padding-left: 16px; padding-right: 16px; }
   .brand h1 { font-size: 1.6rem; }
   .moon { width: 52px; height: 52px; }
-  #agentSelect { max-width: none; flex: 1 1 100%; }
+  #agentSelect { width: 100%; min-width: 0; max-width: none; flex: 1 1 100%; }
 }
 
 /* ---------- reduced motion ---------- */

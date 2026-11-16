@@ -11,7 +11,8 @@ const AVATARS = {
   vampire: '<svg viewBox="0 0 64 64"><path d="M6 10c8 2 12 8 14 14V54c0 3-4 4-6 2C8 50 4 30 6 10Z" fill="#5b1a24"/><path d="M58 10c-8 2-12 8-14 14V54c0 3 4 4 6 2 6-6 10-26 8-46Z" fill="#5b1a24"/><circle cx="32" cy="30" r="15" fill="#f3e2c7"/><path d="M17 28c2-9 8-14 15-14s13 5 15 14c-4-5-9-8-15-8s-11 3-15 8Z" fill="#17102b"/><circle cx="26" cy="30" r="2.2" fill="#e5484d"/><circle cx="38" cy="30" r="2.2" fill="#e5484d"/><path d="M25 40h14l-3 5-2-4-2 4-2-4-2 4-3-5Z" fill="#fff"/><path d="M28 45l2 6 2-6M34 45l2 6 2-6" fill="#fff"/></svg>',
   witch: '<svg viewBox="0 0 64 64"><circle cx="32" cy="42" r="13" fill="#f3e2c7"/><path d="M32 2 12 36c6-3 13-4 20-4s14 1 20 4L32 2Z" fill="#3a2a5e"/><path d="M6 40c8-4 17-6 26-6s18 2 26 6c-8 4-17 6-26 6s-18-2-26-6Z" fill="#241743"/><rect x="26" y="30" width="12" height="6" fill="#ff8c1a"/><circle cx="27" cy="42" r="2" fill="#17102b"/><circle cx="37" cy="42" r="2" fill="#17102b"/><path d="M27 50c3 2 7 2 10 0" stroke="#17102b" stroke-width="2" fill="none" stroke-linecap="round"/></svg>',
   skeleton: '<svg viewBox="0 0 64 64"><path d="M32 4c13 0 22 9 22 21 0 8-4 13-9 16v7H19v-7c-5-3-9-8-9-16C10 13 19 4 32 4Z" fill="#eef4ff"/><circle cx="23" cy="27" r="5.5" fill="#17102b"/><circle cx="41" cy="27" r="5.5" fill="#17102b"/><path d="M32 33l-3 7h6z" fill="#17102b"/><path d="M24 48v8M30 48v9M36 48v9M42 48v8" stroke="#c9d4ea" stroke-width="2.4"/></svg>',
-  zombie: '<svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="24" fill="#8fce62"/><path d="M12 22c6-8 14-12 24-11l-3 6c-7 0-13 2-18 7z" fill="#5da23c"/><circle cx="24" cy="30" r="3.4" fill="#17102b"/><circle cx="41" cy="27" r="2.6" fill="#17102b"/><circle cx="24" cy="30" r="1.2" fill="#eef4ff"/><path d="M22 45c4 3 8 4 12 3l6-1-2 5c-6 2-12 1-17-3z" fill="#3d6b24"/><path d="M44 14l6 8M50 12l-2 9" stroke="#5da23c" stroke-width="3" stroke-linecap="round"/></svg>'
+  zombie: '<svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="24" fill="#8fce62"/><path d="M12 22c6-8 14-12 24-11l-3 6c-7 0-13 2-18 7z" fill="#5da23c"/><circle cx="24" cy="30" r="3.4" fill="#17102b"/><circle cx="41" cy="27" r="2.6" fill="#17102b"/><circle cx="24" cy="30" r="1.2" fill="#eef4ff"/><path d="M22 45c4 3 8 4 12 3l6-1-2 5c-6 2-12 1-17-3z" fill="#3d6b24"/><path d="M44 14l6 8M50 12l-2 9" stroke="#5da23c" stroke-width="3" stroke-linecap="round"/></svg>',
+  mummy: '<svg viewBox="0 0 64 64"><path d="M16 22C16 10 23 4 32 4s16 6 16 18v26c0 8-6 12-16 12s-16-4-16-12Z" fill="#e7d3a7"/><path d="M18 16 45 10M16 25l32-7M16 34l32-7M16 43l32-7M18 52l28-7" stroke="#b99d70" stroke-width="5" stroke-linecap="round"/><path d="M19 29h26v10H19Z" fill="#17102b"/><circle cx="25" cy="34" r="2.6" fill="#7ee82d"/><circle cx="39" cy="34" r="2.6" fill="#7ee82d"/><path d="M27 48h10" stroke="#7e6848" stroke-width="2" stroke-linecap="round"/></svg>'
 };
 
 const AGENTS = [
@@ -115,6 +116,23 @@ const AGENTS = [
       'Deployed — service is alive. ALIVE.',
       'Release complete — zero downtime, one happy zombie.',
       'Done — pipeline green end to end; rollback plan buried just in case.'
+    ]
+  },
+  {
+    id: 'mummy', name: 'Mummy Moderator', role: 'Documentation Specialist', skill: 'Documentation and summaries',
+    color: '#e7d3a7', avatar: 'mummy',
+    keywords: ['documentation', 'document', 'docs', 'readme', 'summary', 'summarize', 'summarise', 'write-up', 'release notes', 'changelog'],
+    steps: [
+      'Unrolling the source material for "{title}"…',
+      'Wrapping the key facts into a clear outline.',
+      'Checking names, links and claims against the original scrolls.',
+      'Trimming repetition without losing important context.',
+      'Sealing the final summary in a neatly labelled sarcophagus.'
+    ],
+    results: [
+      'Documentation complete — clear, accurate and wrapped for easy reading.',
+      'Summary ready — key decisions, evidence and next steps preserved.',
+      'Done — the docs are consistent, concise and ready to share.'
     ]
   }
 ];

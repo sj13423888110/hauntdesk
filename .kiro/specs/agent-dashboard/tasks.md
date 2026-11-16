@@ -16,7 +16,7 @@ All items below were implemented in the three root app files
   - _Requirements: 5.1, 5.4_
 
 - [x] 3. Define the agent roster data in `app.js`
-  - Six agents (Ghost Coder, Pumpkin Planner, Vampire Reviewer, Witch
+  - Initial six agents (Ghost Coder, Pumpkin Planner, Vampire Reviewer, Witch
     Researcher, Skeleton QA, Zombie DevOps) with role, skill, keywords,
     colour, SVG avatar key
   - Role-specific log step pools and result summary pools
@@ -47,3 +47,13 @@ All items below were implemented in the three root app files
   - Hover states, card transitions, log auto-scroll and cap
   - Verified: no external assets, no sound, works from `file://`, JS syntax checked
   - _Requirements: 5.2, 5.3_
+
+- [x] 9. Add Mummy Moderator to the agent roster
+  - Add the seventh agent with a mummy avatar and the specialty
+    "documentation and summaries"
+  - Add documentation-focused assignment keywords, log step templates,
+    result summaries, and a matching quick-dispatch prompt
+  - Keep the roster layout and visual treatment consistent with the other agents
+  - Verify explicit dispatch, keyword auto-assignment, live logs, completion,
+    responsive layout, offline operation, and JavaScript syntax
+  - _Requirements: 1.1, 2.4, 3.2, 3.3, 3.4, 3.5, 5.3, 5.4_

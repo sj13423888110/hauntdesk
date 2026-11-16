@@ -7,9 +7,9 @@ working with a team of AI agents.
 ## Core concept
 
 - The user is the operator of a haunted control room on the night shift.
-- A roster of themed AI agents (Ghost Coder, Pumpkin Planner, Vampire
-  Reviewer, Witch Researcher, Skeleton QA, Zombie DevOps) each has a role
-  and a specialty skill.
+- A roster of seven themed AI agents (Ghost Coder, Pumpkin Planner, Vampire
+  Reviewer, Witch Researcher, Skeleton QA, Zombie DevOps, and Mummy
+  Moderator) each has a role and a specialty skill.
 - The user dispatches tasks; agents pick them up, stream a live log of
   plausible role-specific work steps, and complete them with a result
   summary.

@@ -5,7 +5,7 @@ You are the night-shift operator of a haunted control room: a roster of spooky
 AI agents waits for orders, you dispatch tasks, watch them work in real time,
 and collect the candy when the job is done.
 
-**Live app:** TBD (to be added before submission)
+**Live app:** https://sj13423888110.github.io/hauntdesk/
 **Demo video (<3 min):** TBD (to be added before submission)
 
 ## What it is

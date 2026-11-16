@@ -1,0 +1,16 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor / IDE local settings (note: .kiro/ is intentionally NOT ignored —
+# the Kiro steering files and specs are part of this project and must be committed)
+.vscode/
+.idea/
+*.swp
+
+# Node (not required to run the app; listed for tooling hygiene)
+node_modules/
+
+# Logs / temp
+*.log
+tmp/

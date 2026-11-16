@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HauntDesk — AI Agent Control Room</title>
+<meta name="description" content="A Halloween-themed AI agent dashboard: dispatch tasks to spooky agents, watch them work live, collect the candy. Built for Kiroween 2026.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ambient decorations -->
+<div class="moon" aria-hidden="true"></div>
+<div class="ghost-deco ghost-a" aria-hidden="true">
+  <svg viewBox="0 0 60 70"><path d="M30 2C16 2 8 14 8 28v34l7-6 7 6 8-6 8 6 7-6 7 6V28C52 14 44 2 30 2Z" fill="currentColor"/><circle cx="21" cy="26" r="3.4" fill="#17102b"/><circle cx="39" cy="26" r="3.4" fill="#17102b"/><ellipse cx="30" cy="37" rx="4" ry="5.4" fill="#17102b"/></svg>
+</div>
+<div class="ghost-deco ghost-b" aria-hidden="true">
+  <svg viewBox="0 0 60 70"><path d="M30 2C16 2 8 14 8 28v34l7-6 7 6 8-6 8 6 7-6 7 6V28C52 14 44 2 30 2Z" fill="currentColor"/><circle cx="21" cy="26" r="3.4" fill="#17102b"/><circle cx="39" cy="26" r="3.4" fill="#17102b"/><ellipse cx="30" cy="37" rx="4" ry="5.4" fill="#17102b"/></svg>
+</div>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark" aria-hidden="true">
+      <svg viewBox="0 0 48 48"><path d="M8 44V24L24 6l16 18v20h-9V30H17v14Z" fill="#ff8c1a"/><path d="M24 6 8 24h32Z" fill="#7ee82d"/><rect x="21" y="34" width="6" height="10" fill="#17102b"/></svg>
+    </div>
+    <div>
+      <h1>HauntDesk</h1>
+      <p class="tagline">AI Agent Control Room — night shift</p>
+    </div>
+  </div>
+
+  <div class="stats" role="status" aria-label="Shift statistics">
+    <div class="stat">
+      <span class="stat-num" id="statCompleted">0</span>
+      <span class="stat-label">tasks completed</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num" id="statActive">0</span>
+      <span class="stat-label">agents haunting</span>
+    </div>
+    <div class="candy">
+      <div class="candy-head">
+        <span class="candy-label">Candy meter</span>
+        <span class="candy-pct" id="candyPct">0%</span>
+      </div>
+      <div class="candy-track"><div class="candy-fill" id="candyFill"></div></div>
+    </div>
+    <div class="house" aria-hidden="true" title="The house lights up as you complete tasks">
+      <svg viewBox="0 0 120 96">
+        <path d="M14 92V48L60 12l46 36v44Z" fill="#241743"/>
+        <path d="M6 50 60 6l54 44-8 2L60 18 14 52Z" fill="#120b26"/>
+        <rect x="52" y="66" width="16" height="26" fill="#120b26"/>
+        <g fill="#3a2a5e">
+          <rect class="house-window" x="24" y="56" width="11" height="13"/>
+          <rect class="house-window" x="85" y="56" width="11" height="13"/>
+          <rect class="house-window" x="38" y="34" width="11" height="13"/>
+          <rect class="house-window" x="71" y="34" width="11" height="13"/>
+          <rect class="house-window" x="54" y="22" width="12" height="12"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="panel roster-panel">
+    <div class="panel-head">
+      <h2>The Roster</h2>
+      <div class="candles" aria-hidden="true">
+        <span class="candle"><i class="flame"></i></span>
+        <span class="candle"><i class="flame"></i></span>
+        <span class="candle"><i class="flame"></i></span>
+      </div>
+    </div>
+    <div class="roster" id="roster"><!-- agent cards rendered by app.js --></div>
+  </section>
+
+  <section class="panel dispatch-panel">
+    <h2>Dispatch a task</h2>
+    <form id="taskForm" autocomplete="off">
+      <input type="text" id="taskTitle" maxlength="90"
+             placeholder="e.g. Review the potion API for bugs…" aria-label="Task title">
+      <select id="agentSelect" aria-label="Assign to agent">
+        <option value="auto">Auto-assign (match by specialty)</option>
+        <!-- agent options rendered by app.js -->
+      </select>
+      <button type="submit" class="btn-dispatch">Summon agent</button>
+    </form>
+    <div class="quick">
+      <span class="quick-label">Try:</span>
+      <button type="button" class="chip" data-title="Write a function that summons bats on click">code a bat-summoning function</button>
+      <button type="button" class="chip" data-title="Plan the haunted sprint for next week">plan the sprint</button>
+      <button type="button" class="chip" data-title="Review the graveyard deploy script">review a script</button>
+      <button type="button" class="chip" data-title="Research why the moon API is flaky">research a flaky API</button>
+      <button type="button" class="chip" data-title="Test the coffin checkout flow end to end">test checkout flow</button>
+      <button type="button" class="chip" data-title="Deploy the pumpkin service before midnight">deploy before midnight</button>
+    </div>
+  </section>
+
+  <div class="work-area">
+    <section class="panel board-panel">
+      <h2>Task board</h2>
+      <div class="board">
+        <div class="column">
+          <h3>Queued <span class="count" id="countQueued">0</span></h3>
+          <div class="cards" id="colQueued"></div>
+        </div>
+        <div class="column">
+          <h3>Haunting <span class="count" id="countRunning">0</span></h3>
+          <div class="cards" id="colRunning"></div>
+        </div>
+        <div class="column">
+          <h3>Completed <span class="count" id="countDone">0</span></h3>
+          <div class="cards" id="colDone"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel log-panel">
+      <div class="panel-head">
+        <h2>Agent log</h2>
+        <span class="log-live" id="logLive">live</span>
+      </div>
+      <div class="log" id="logStream" aria-live="polite">
+        <div class="log-line log-system"><span class="log-time">--:--:--</span> The desk is open. Summon an agent to begin the haunting.</div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <p><strong>About this project:</strong> HauntDesk was built for
+  <strong>Kiroween 2026</strong> using a spec-driven workflow in Kiro —
+  steering files and a requirements → design → tasks spec live in
+  <code>.kiro/</code>, and the app was implemented from that task list.
+  Pure vanilla HTML/CSS/JS, no backend, no sound, works offline.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

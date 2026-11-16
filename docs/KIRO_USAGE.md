@@ -45,9 +45,27 @@ The dashboard was specified as a Kiro spec before implementation:
 - Constraints from `tech.md` were treated as acceptance tests: no external
   requests, no audio, works from `file://`, JS passes a syntax check.
 
-## 4. Session details
+## 4. Session details (actual Kiro session, 2026-11-16)
 
-> [To be completed after the Kiro IDE session: which tasks from `tasks.md`
-> were executed inside Kiro, which models were used, and how many credits
-> were spent. This section is intentionally left as a placeholder so the
-> write-up only states what actually happened in the Kiro session.]
+The seventh agent was added in a real Kiro session, end to end:
+
+- **Surface / mode:** Kiro Web (app.kiro.dev), Spec Mode, working directly
+  on this GitHub repository.
+- **Model:** GPT 5.6 Sol (the 4.4x-credit model). Session run time ≈ 5 min.
+- **What the session did, in order:** read the steering docs and the
+  `agent-dashboard` spec → added a new requirement to `requirements.md` →
+  recorded the change in `design.md` → added task 9 to `tasks.md` and
+  checked it off → implemented the "Mummy Moderator" agent (documentation &
+  summaries) in `app.js`, `index.html`, and `styles.css` (SVG avatar, roster
+  entry, keyword-based auto-assign, role-specific log lines and result
+  summaries, seven-card layout fix) → updated `product.md` and `README.md`
+  → self-verified (JS syntax check, layout and queueing behaviour).
+- **Commit:** pushed by the Kiro agent as commit `1fc523a`
+  ("Add Mummy Moderator: seventh agent via Kiro spec session",
+  8 files changed, +47/−14).
+- **Credits:** measured on the account page, the Kiroween reward pool
+  (4,000 credits) went from 9.18 used before the session to 50.57 used
+  after it, i.e. ≈ 41.4 credits for the main session; the follow-up
+  commit/push step was estimated at 2.75 credits by the session footer.
+  (The main session's own footer estimate was 16.08 — the account-page
+  figure is the one we trust.)
